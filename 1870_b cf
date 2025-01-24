@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+void solve(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        int m=0,b=0;
+        for(int i=0;i<n;i++){
+            int in;
+            cin>>in;
+            if(in& 1) b+=in;
+            else m+=in;
+        }
+        if(m<=b)cout<<"NO"<<endl;
+        else cout<<"YES"<<endl;
+    }
+    }
+int main() {
+	solve();
+	return 0;}
