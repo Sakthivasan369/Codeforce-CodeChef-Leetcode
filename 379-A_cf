@@ -1,0 +1,29 @@
+ #include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+    int a, b;
+    cin >> a >> b; // Input: number of candles and the number required to create a new one
+    int ans = 0;   // Total hours of light
+    int r = 0;     // Remainder of candles (leftovers)
+
+    // Loop until there are no more candles to burn
+    while (a > 0) {
+        ans += a;       // Burn all current candles
+        r += a % b;     // Add the remainder to leftovers
+        a = a / b;      // New candles made from burned ones
+        
+        // Combine leftover candles into new ones
+        if (r >= b) {
+            a += r / b; // Add new candles from leftovers
+            r %= b;     // Update remaining leftovers
+        }
+    }
+
+    cout << ans << endl; // Output the total hours of light
+}
+
+int main() {
+    solve(); // Call the solve function
+    return 0;
+}
